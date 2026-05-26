@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio Toni PIONKOUA</title>
+    <meta name="description" content="Portefolio BTS SISR — projets réseau, GLPI, sauvegarde.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* -------------------------
+       Reset / base
+       ------------------------- */
+            :root{
+    --bg:#06131f;
+    --card:#0b1726;
+    --card-hover:#102033;
+    --text:#eaf2ff;
+    --muted:#94a3b8;
+    --accent:#38bdf8;
+    --accent2:#6ee7b7;
+    --border:rgba(255,255,255,0.08);
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+
+    --radius:18px;
+    --maxw:1200px;
+}
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html,
+        body {
+            height: 100%
+        }
+        
+        body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:
+    radial-gradient(circle at top left,#0f2942 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#062b36 0%,transparent 25%),
+    linear-gradient(180deg,#050b14 0%,#07111c 100%);
+
+    color:var(--text);
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+    padding:32px 16px;
+
+    display:flex;
+    justify-content:center;
+}
+        
+        .wrap {
+            width: 100%;
+            max-width: var(--maxw);
+        }
+        /* -------------------------
+       Header / Nav
+       ------------------------- */
+        
+        header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+
+    margin-bottom:40px;
+
+    padding:18px 24px;
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+        
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #04232a;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+        
+        nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .nav-link{
+    color:var(--muted);
+
+    text-decoration:none;
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    transition:0.25s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+        
+       .nav-link:hover{
+    color:white;
+
+    background:
+    rgba(56,189,248,0.12);
+
+    box-shadow:
+    0 0 15px rgba(56,189,248,0.15);
+}
+        
+        .cta {
+            background: var(--accent);
+            color: #023;
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 6px 18px rgba(17, 24, 39, 0.4);
+        }
+        /* -------------------------
+       Hero
+       ------------------------- */
+        
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+        
+        .card{
+    background:rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+    transition:0.3s ease;
+}
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(56,189,248,0.4);
+}
+
+h1,h2,h3,h4{
+    letter-spacing:-0.5px;
+}
+
+h1{
+    font-size:42px;
+    line-height:1.1;
+}
+
+.hero{
+    margin-top:20px;
+}
+
+.logo{
+    box-shadow:
+    0 0 25px rgba(56,189,248,0.4);
+}
+
+.cta{
+    transition:0.3s ease;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+    box-shadow:
+    0 10px 20px rgba(56,189,248,0.3);
+}
+        
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px
+        }
+        
+        p.lead {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.5
+        }
+        
+        .tags {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px
+        }
+        /* -------------------------
+       Quick info column
+       ------------------------- */
+        
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .avatar {
+            width: 100%;
+            height: 240px;
+            border-radius: 70px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #063b42, #04283e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 8px;
+            justify-content: space-between
+        }
+        
+        .stat {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center
+        }
+        
+        .stat strong {
+            display: block;
+            font-size: 18px;
+            color: var(--accent)
+        }
+        /* -------------------------
+       Sections
+       ------------------------- */
+        
+        section {
+            margin-bottom: 20px
+        }
+        
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+        
+        .project{
+    position:relative;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,0.04),
+        rgba(255,255,255,0.02)
+    );
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    overflow:hidden;
+
+    transition:0.35s ease;
+}
+.project::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #38bdf8,
+        #6ee7b7
+    );
+}
+        
+        .project h3{
+    margin:0 0 14px 0;
+
+    font-size:22px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#f1f5f9;
+}
+        
+        .project p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.45
+        }
+        
+        .badges{
+    margin-top:18px;
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+        
+        .badge{
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    background:
+    rgba(56,189,248,0.08);
+
+    border:
+    1px solid rgba(56,189,248,0.15);
+
+    color:#c7e7ff;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:0.3px;
+}
+        /* -------------------------
+       Skills / Footer
+       ------------------------- */
+        
+        .skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+        
+        .skill {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: var(--muted)
+        }
+        
+        footer {
+            margin-top: 10px;
+            padding: 16px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px
+        }
+        /* -------------------------
+       Responsive
+       ------------------------- */
+        
+        @media (max-width:900px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+            .grid {
+                grid-template-columns: 1fr
+            }
+            .info .avatar {
+                height: 180px
+            }
+        }
+        /* -------------------------
+       Small helpers
+       ------------------------- */
+        
+        a.inline {
+            color: var(--accent);
+            text-decoration: none
+        }
+        
+        .note {
+            color: var(--muted);
+            font-size: 13px
+        }
+        
+        .btn-link{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    color:#dff6ff;
+
+    text-decoration:none;
+
+    transition:0.3s ease;
+
+    font-weight:600;
+}
+        
+        .avatar img {
+            width: 70%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .missions ul {
+            padding-left: 8px;
+            margin-top: 8px;
+        }
+        
+        .missions li {
+            margin-bottom: 4px;
+            line-height: 1.0;
+            color: #e5e7eb;
+        }
+        
+        .project:hover{
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(56,189,248,0.35);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.35);
+}
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .cta:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        
+        .btn-link:hover{
+    background:
+    linear-gradient(
+        135deg,
+        #38bdf8,
+        #6ee7b7
+    );
+
+    color:#03131f;
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 10px 20px rgba(56,189,248,0.25);
+}
+        
+        .center {
+            text-align: center;
+            width: 100%;
+        }
+        
+        .section-title.center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .section-title h2{
+    position:relative;
+
+    display:inline-block;
+}
+
+.section-title h2::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:60%;
+
+    height:3px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #38bdf8,
+        #6ee7b7
+    );
+}
+.project{
+    position:relative;
+    overflow:hidden;
+}
+.project::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:140px;
+    height:140px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(56,189,248,0.18),
+        transparent 70%
+    );
+
+    z-index:0;
+}
+.project *{
+    position:relative;
+    z-index:2;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <a class="brand" href="#">
+                <div class="logo">TP</div>
+                <div>
+                    <div style="font-weight:700">Toni PIONKOUA</div>
+                    <div style="font-size:13px;color:var(--muted)">Étudiant BTS SISR — Déploiement & Administration Réseau</div>
+                </div>
+            </a>
+            <nav aria-label="Navigation principale">
+                <a class="nav-link" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-a-solutions-d-infrastructure-systemes-et-reseaux">A propos</a>
+                <a class="nav-link" href="#projets">Projets</a>
+                <a class="nav-link" href="#competences">Tableau de synthèse</a>
+                <a class="cta" href="Toni-Simple Professional CV.pdf">Curriculum Vitae</a>
+            </nav>
+
+        </header>
+        <!-- HERO -->
+        <div class="hero">
+            <div class="card">
+                <h1>Portefolio — Toni PIONKOUA</h1>
+                <P>
+                    <section class="missions">
+                        <h3>Missions principales</h3>
+                        <ul>
+                            <li>Configuration des équipements réseau (routeurs, commutateurs, points d’accès Wi-Fi)</li>
+                            <li>Gestion de l’adressage IP (IPv4 / IPv6), DNS et DHCP</li>
+                            <li>Mise en place de VLAN et du routage inter-VLAN</li>
+                            <li>Sécurisation du réseau (pare-feu, filtrage, VPN, contrôle d’accès)</li>
+                            <li>Supervision et surveillance de l’infrastructure (Zabbix, Nagios, SNMP...)</li>
+                            <li>Gestion des incidents et dépannage</li>
+                            <li>Documentation et mise à jour de l’infrastructure</li>
+                        </ul>
+                    </section>
+                </P>
+
+                <div class="tags">
+                    <span class="tag">Windows Server</span>
+                    <span class="tag">Windows Pro</span>
+                    <span class="tag">GLPI</span>
+                    <span class="tag">Proxmox</span>
+                    <span class="tag">Pfsense </span>
+                    <span class="tag">Kanboard</span>
+                    <span class="tag">Ubuntu</span>
+                    <span class="tag">Vlans</span>
+                    <span class="tag">WPA2/WPA3</span>
+                </div>
+                
+            </div>
+
+            <aside class="card info" aria-label="Informations rapides">
+                <div class="avatar">
+                    <img src="IMG_0329 (1).JPG" alt="Photo de Toni PIONKOUA">
+                </div>
+                <p class="lead">
+                    Je m'appelle Toni PIONKOUA, actuellement étudiant en BTS Services Informatiques aux Organisations (SISR) au sein de APEPSUP .
+                </p>
+
+                <p class="lead">
+                    Je me spécialise dans l’administration des systèmes et des réseaux, avec un intérêt particulier pour la sécurité, la virtualisation et la gestion des infrastructures.
+                </p>
+
+                <p class="lead">
+                    Au cours de ma formation, j’ai réalisé plusieurs projets techniques incluant la mise en place d’environnements virtualisés sous Proxmox, la configuration de pare-feu avec pfSense, ainsi que des solutions de supervision et de sauvegarde avec GLPI et TrueNAS.
+                </p>
+
+                <p class="lead">
+                    Mon objectif est de devenir administrateur systèmes et réseaux et d’intégrer une structure où je pourrai mettre en pratique mes compétences tout en continuant à progresser.
+                </p>
+                <div style="margin-top:12px">
+                    <strong>Linkedln :</strong> Dumesnil PIONKOUA
+                </div>
+            </aside>
+        </div>
+        <!-- fin HERO -->
+
+        <!-- FORMATION -->
+        <section id="formation">
+            <div class="section-title">
+                <h2 style="margin:0">Formation</h2>
+                <div class="note">Parcours académique</div>
+            </div>
+
+            <div class="card">
+                <h3>BTS Services Informatiques aux Organisations (SISR)</h3>
+                <div class="school-logo">
+                    <img src="Capture d'écran 2026-04-30 104533.png" alt="Logo APEPSUP">
+                </div>
+                <p class="lead">Je réalise ma formation au sein de l’établissement APEPSUP, qui est une école spécialisée privée, fondée en 2008, située au cœur de Paris. Elle se distingue par son approche pédagogique orientée vers la comptabilité, la gestion et les services informatiques aux organisations. APEPSUP propose une gamme de formations diplômantes dans le domaine de la comptabilité et de la gestion, incluant le BTS comptabilité et gestion, le BTS services informatiques aux organisations - option SISR, le Diplôme de comptabilité et de gestion (DCG), ainsi que le Diplôme supérieur de comptabilité et de gestion (DSCG).</p>
+                <p class="note">
+                    Établissement : APEPSUP<br> Période : 2024 – 2026
+                </p>
+
+                <ul>
+                    <li>Administration systèmes et réseaux</li>
+                    <li>Virtualisation (Proxmox)</li>
+                    <li>Sécurisation (VLAN, firewall)</li>
+                    <li>Supervision (GLPI, Zabbix)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section id="projets">
+
+            <div class="section-title center">
+                <h2 class="cta">REALISATIONS</h2>
+            </div>
+            <div class="grid">
+                <!-- Projet 1 -->
+                <article class="project " aria-labelledby="p2 ">
+                <h3 id="p1">Réalisation en première année</h3>
+                <p><strong>Nature :</strong> Les différents projets menés durant ma formation illustrent mes compétences techniques, ma rigueur et ma capacité à travailler en situation réelle. <strong>Objectif :</strong> L’objectif de ces projets était d’appliquer les notions vues en cours et de renforcer mes compétences pratiques.</p>
+                <div class="badges ">
+                    <span class="badge">HTML/CSS/JS</span>
+                    <span class="badge">MySQL</span>
+                    <span class="badge">PHP (back-end)</span>
+                    <span class="badge">Sécurité basique</span>
+                </div>
+                <p style="margin-top:10px;color:var(--muted)">Remarque : version demo, base de données SQL, pages produit, panier, interface admin pour ajouter/modifier les instruments.</p>
+                <a class="btn-link" href="Capture d'écran 2026-05-26 064038.png" width="100% " height="800 " style="border: none; ">VM Virtuel Box</a>
+                <a class="btn-link" href="essaiejs.htm " width="100% " height="800 " style="border: none; ">Voir mes projets</a>
+                <a class="btn-link" href="projetadji.html " width="100% " height="100 " style="border: none; ">Voir mes projets</a>
+                <a class="btn-link" href="projetblanc.html" width="100% " height="100 " style="border: none; ">Voir mes projets</a>
+                <a class="btn-link" href="pjcss.html" width="100% " height="100 " style="border: none; ">Voir mes projets</a>
+                <a class="btn-link" href="classe-js.html" width="100% " height="100 " style="border: none; ">Voir mes projets</a>
+                <a class="btn-link" href="Nouveau dossier" width="100% " height="100 " style="border: none; ">Voir mes projets</a>
+                <a class="btn-link" href="projetbtsbln.html" width="100% " height="100 " style="border: none; ">Voir mes projets</a>
+            </article>
+            <!-- Projet 1 -->
+                <article class="project " aria-labelledby="p2 ">
+                <h3 id="p1">Réalisation en deuxième année</h3>
+                <p><strong>Nature :</strong> Les différents projets menés durant ma formation illustrent mes compétences techniques, ma rigueur et ma capacité à travailler en situation réelle. <strong>Objectif :</strong> L’objectif de ces projets était d’appliquer les notions vues en cours et de renforcer mes compétences pratiques.</p>
+                <div class="badges ">
+                    <span class="badge">Windows Serveur</span>
+                    <span class="badge">Windows 10 pro</span>
+                    <span class="badge">Ubuntu</span>
+                    <span class="badge">Pfsense</span>
+                    <span class="badge">Zabbix</span>
+                </div>
+                <p style="margin-top:10px;color:var(--muted)">Remarque : version demo, base de données SQL, pages produit, panier, interface admin pour ajouter/modifier les instruments.</p>
+                <a class="btn-link" href="VirtualBox_windows server_26_05_2026_06_46_38.png" width="100% " height="800 " style="border: none; ">Win Ser</a>
+                <a class="btn-link" href="WhatsApp Image 2026-05-26 at 6.55.08 AM.jpeg" width="100% " height="100 " style="border: none; ">Win 10 pro</a>
+                <a class="btn-link" href="image001(2).png" width="100% " height="100 " style="border: none; ">Ubuntu</a>
+                <a class="btn-link" href="image001(4).png" width="100% " height="100 " style="border: none; ">Pfsense</a>
+                <a class="btn-link" href="Capture d'écran 2026-05-26 063742.png" width="100% " height="100 " style="border: none; ">Proxmox</a>
+                <a class="btn-link" href="Capture d'écran 2026-05-26 063345.png" width="100% " height="100 " style="border: none; ">GLPI</a>
+                <a class="btn-link" href="Capture d'écran 2026-05-26 063546.png" width="100% " height="100 " style="border: none; ">KanBoard</a>
+                <a class="btn-link" href="image002.png" width="100% " height="100 " style="border: none; ">Zabbix</a>
+            </article>
+<!-- Projet 1 -->
+                <article class="project " aria-labelledby="p2 ">
+                <h3 id="p1">Réalisation en en stage première année</h3>
+                <p><strong>Nature :</strong> Les différents projets menés durant ma formation illustrent mes compétences techniques, ma rigueur et ma capacité à travailler en situation réelle. <strong>Objectif :</strong> L’objectif de ces projets était d’appliquer les notions vues en cours et de renforcer mes compétences pratiques.</p>
+                <div class="badges ">
+                    <p>Lors de mon stage à l’association Source de Vie, j’étais technicien informatique.
+J’ai participé à plusieurs missions liées à l’organisation du système informatique de l’association.
+<strong>Veille du site Internet </strong> :
+
+ Une de mes missions consistait à effectuer une veille du site Internet afin de vérifier son bon fonctionnement et d’identifier d’éventuels problèmes ou améliorations possibles.
+
+Cela m’a permis de comprendre l’importance de la disponibilité et du suivi des services numériques.
+<strong>Structure du système réseau </strong>:
+
+J’ai également travaillé sur la structure du système réseau de l’association.
+Cette mission m’a permis d’observer l’organisation de l’infrastructure informatique et de mieux comprendre la communication entre les équipements réseau.
+J’ai aussi participé à un projet LMS, c’est-à-dire une plateforme destinée à la gestion de contenus ou de formations numériques.
+
+Cette expérience m’a permis de découvrir le fonctionnement d’un projet informatique et l’importance des besoins utilisateurs dans la mise en place d’une solution numérique.</p>
+                   
+            </article>
+
+                <!-- Projet 2 -->
+                <article class="project " aria-labelledby="p2 ">
+                    <h3 id="p2 ">Synology + TrueNAS</h3>
+                    <p><strong>Nature :</strong> Dans le cadre de la formation BTS SIO option SISR, disposant d’une infrastructure virtualisée permettant de
+déployer et administrer différents services réseaux, j’ai mis en place une infrastructure de stockage réseau
+sécurisée et segmentée, basée sur deux NAS : un Synology en production et un TrueNAS en secours, intégrés
+à un domaine Active Directory.
+Le projet consiste à mettre en place une solution de stockage réseau centralisée permettant de partager des
+fichiers entre les utilisateurs tout en garantissant la sécurité via une authentification Active Directory et la
+disponibilité des données grâce à une réplication, et l’isolation réseau grâce aux VLAN</p>
+                    <div class="badges ">
+                        <span class="badge ">GLPI</span>
+                        <span class="badge ">TrueNAS</span>
+                        <span class="badge ">ZFS snapshots</span>
+                        <span class="badge ">Samba / NFS</span>
+                        <a class="btn-link " href="TONI- EPREUVE PRATIQUE E6 - BTS SIO 2026(1).pdf">Voir la documentation </a>
+                        <a class="btn-link " href="image001(1).png">Illustration TrueNAS </a>
+                        <a class="btn-link " href="Capture d'écran 2026-05-15 121316.png">Illustration Synology </a>
+                    </div>
+                    <p style="margin-top:10px;color:var(--muted) ">Contenu : architecture, playbook de sauvegarde, procédure de restauration, tests de montée en charge, gestion des backups hors site.</p>
+                </article>
+
+                <!-- Projet 3 -->
+                <article class="project" aria-labelledby="p3">
+                    <h3 id="p3 ">Déploiement d’une infrastructure Active Directory en environnement virtualisé isolé</h3>
+                    <p><strong>Nature :</strong> Dans le cadre du BTS SIO option SISR à IGF APEP SUP (CFA), un environnement d’infrastructure complet a
+été déployé sur un serveur Proxmox physique mutualisé entre 11 étudiants (janvier – mai 2026). Chaque
+étudiant dispose d’un pool Proxmox dédié, isolé dans un VLAN distinct (VLAN 80 — 192.168.80.0/24) géré par
+un Cisco C3560 L2 et un pfSense physique (Dual WAN : Freebox Fibre + 4G LTE) assurant le routage interVLAN, le filtrage et la sécurité
+</p>
+                    <div class="badges ">
+                        <span class="badge">pfSense</span>
+                        <span class="badge">VLAN</span>
+                        <span class="badge">OpenVPN</span>
+                        <span class="badge">Zabbix (monitoring)</span>
+                         <a class="btn-link" href="TONI-P1- EPREUVE PRATIQUE E6 - BTS SIO 2026(1).pdf">Voir la documentation </a>
+                    </div>
+                    <p style="margin-top:10px;color:var(--muted)">Livrables : schéma réseau, règles firewall, playbook d’installation, scripts de sauvegarde de config et tests de résilience.</p>
+                </article>
+
+                <!-- Projet 4 (placeholder) -->
+                <article class="project" aria-labelledby="p4">
+                    <h3 id="p4 ">Réalisation en stage deuxième année </h3>
+                    <p>Durant mon stage à l’Ambassade de la République du Congo, j’occupais le poste d’assistant informatique.
+Mon rôle était d’assurer le bon fonctionnement du matériel informatique et d’aider les utilisateurs en cas de problème.
+<strong>Installation des postes et imprimantes</strong> : Installation des postes et imprimantes.
+<strong>Maintenance des postes</strong> : J’effectuais également la maintenance des postes de travail.
+Par exemple, je diagnostiquais certains problèmes matériels ou logiciels afin de rétablir le fonctionnement des ordinateurs.
+
+Cela m’a appris à analyser rapidement les incidents et à proposer des solutions adaptées.
+<strong>Assistance utilisateurs</strong> : J’assurais aussi le support utilisateur.
+Les utilisateurs me sollicitaient lorsqu’ils rencontraient des difficultés informatiques, comme des problèmes de connexion, d’impression ou d’accès à certains outils.
+
+Cette expérience m’a permis d’améliorer ma communication et ma capacité à vulgariser les solutions techniques.
+<strong>Réseau Ethernet / Wi-Fi</strong> : J’ai aussi participé à la vérification des connexions réseau, notamment des câbles Ethernet et du Wi-Fi.
+
+Lorsque certains postes avaient des problèmes de connexion, je réalisais des vérifications afin d’identifier l’origine du problème, que ce soit un câble défectueux, un problème de configuration réseau ou un accès Wi-Fi.
+
+Cette mission m’a permis de développer mes compétences en diagnostic réseau.</p>
+                    
+                </article>
+            </div>
+        </section>
+        <section id="projet-js ">
+            <div class="section-title center">
+                <h2 class="cta">VEILLE TECHNOLOGIQUE</h2>
+            </div>
+            <p>
+
+La veille technologique consiste à suivre les évolutions du domaine informatique afin de rester informé des nouvelles technologies, des menaces de cybersécurité et des bonnes pratiques professionnelles.
+
+Dans le cadre de mon BTS SIO option SISR, cette veille me permet d’enrichir mes connaissances et de développer mes compétences techniques. Pour cela, j’utilise différentes sources comme des newsletters, des sites spécialisés et des ressources professionnelles.
+
+Vous trouverez ci-dessous un exemple de sujet de veille que j’ai étudié ainsi que plusieurs captures de newsletters utilisées pour suivre l’actualité informatique et cybersécurité.</p>
+
+            <a class="btn-link" href="L’IA dans la cybersécurité _ menace ou protection _.pdf">Sujet de veille </a>
+<a class="btn-link" href="Capture d'écran 2026-05-15 010117.png">Capture Inscription </a>
+            <a class="btn-link" href="Capture d'écran 2026-05-24 235122.png">Capture 1 </a>
+            <a class="btn-link" href="Capture d'écran 2026-05-24 235352.png">Capture 2</a>
+            <a class="btn-link" href="Capture d'écran 2026-05-25 000036.png">Capture 3 </a>
+            <a class="btn-link" href="Capture d'écran 2026-05-25 004033.png">Capture 4 </a>
+        </section>
+
+        <!-- COMPETENCES -->
+        <section id="competences ">
+            <div class="section-title ">
+                <h2 style="margin:0 ">Compétences</h2>
+                <div class="note ">Techniques et outils maîtrisés</div>
+            </div>
+
+            <div class="card ">
+                <div style="display:flex;gap:24px;flex-wrap:wrap ">
+                    <div style="flex:1;min-width:260px ">
+                        <h4 style="margin:0 0 8px 0 ">Réseau & Systèmes</h4>
+                        <div class="skills ">
+                            <span class="skill ">TCP/IP</span>
+                            <span class="skill ">VLAN</span>
+                            <span class="skill ">pfSense</span>
+                            <span class="skill ">Proxmox</span>
+                            <span class="skill ">TrueNAS</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;min-width:260px ">
+                        <h4 style="margin:0 0 8px 0 ">Supervision & gestion</h4>
+                        <div class="skills ">
+                            <span class="skill ">GLPI</span>
+                            <span class="skill ">KanBoard</span>
+                            <span class="skill ">Backup (ZFS snapshots)</span>
+                            <span class="skill ">Zabbix</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;min-width:260px ">
+                        <h4 style="margin:0 0 8px 0 ">Dev / Web</h4>
+                        <div class="skills ">
+                            <span class="skill ">HTML/CSS/JS</span>
+                            <span class="skill ">PHP/MySQL</span>
+                            <span class="skill ">JavaScript</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;min-width:260px ">
+                        <h4 style="margin:0 0 8px 0 ">Certifications</h4>
+                        <div class="skills ">
+                            <span class="skill ">SecNum Académie ANSSI <a class="btn-link" href="SecNumAcademie.pdf">Attesation 1</a></span>
+                            <span class="skill ">Atelier RGPD <a class="btn-link" href="Attestation_de_suivi2.pdf">Attestation 2</a></span>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+         <!-- ARCHITECTURE -->
+        <section id="architecture">
+            <div class="section-title">
+                <h2 style="margin:0">Architecture</h2>
+                <div class="note">Vue technique de l'infrastructure</div>
+            </div>
+
+            <div class="card">
+                <p>
+                    Infrastructure virtualisée sous
+                    <strong>Proxmox</strong> avec segmentation VLAN et firewall
+                    <strong>pfSense</strong>.
+                </p>
+
+                <ul>
+                    <li>Virtualisation des serveurs (GLPI, TrueNAS)</li>
+                    <li>Segmentation réseau via VLAN</li>
+                    <li>Firewall et routage avec pfSense</li>
+                    <li>Supervision avec Zabbix</li>
+                </ul>
+            </div>
+        </section>
+        </section>
+        <!-- FIN PROJETS -->
+
+        <!-- CONTACT -->
+        <section id="contact ">
+            <div class="section-title ">
+                <h2 style="margin:0 ">Contact </h2>
+                
+
+            </div>
+
+            <div class="card ">
+                <div style="display:flex;gap:20px;flex-wrap:wrap ">
+                    <div style="flex:1;min-width:260px ">
+                        <h4 style="margin:0 0 8px 0 ">Contact</h4>
+                        <p class="note "><strong>Email :</strong> dumesnilpionkoua5@gmail.com<br><strong>Téléphone :</strong>+33(0)780766439<br><strong>Linkedln :</strong> Dumesnil PIONKOUA <br><strong>Localisation :</strong> 77550, île de france</p>
+
+                    </div>
+
+                    <div style="flex:1;min-width:260px ">
+                        
+                        <div style="margin-top:30px ">
+                            <a class="cta" href="mailto:dumesnilpionkoua5@gmail.com">Me Contacter par mail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © <span id="year "></span> [Toni PIONKOUA] — Portfolio BTS SISR • Template livré en HTML/CSS
+        </footer>
+    </div>
+
+    <script>
+        // Small script : insert current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    
+</body>
+
+</html>
